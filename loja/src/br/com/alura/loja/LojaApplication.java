@@ -15,8 +15,8 @@ public class LojaApplication {
         CalculadoraDeImpostos calculadoraDeImpostos = new CalculadoraDeImpostos();
 
         Orcamento orcamento = new Orcamento(new BigDecimal("150"), 6);
-        Orcamento orcamento2 = new Orcamento(new BigDecimal("250"), 6);
-        Orcamento orcamento3 = new Orcamento(new BigDecimal("550"), 3);
+        Orcamento orcamento2 = new Orcamento(new BigDecimal("200"), 6);
+        Orcamento orcamento3 = new Orcamento(new BigDecimal("1000"), 2);
 
         System.out.println("======================");
         System.out.println("CalculadoraDeImpostos");
