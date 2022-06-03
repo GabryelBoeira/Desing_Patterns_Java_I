@@ -10,6 +10,8 @@ public class PedidoTeste {
         int qtdeItens = Integer.parseInt(args[2]);
 
         GeraPedido gerador = new GeraPedido(cliente,valorOrcamento, qtdeItens);
-        gerador.executar();
+        GeraPedidoHandler handler = new GeraPedidoHandler(/*dependencias*/);
+
+        handler.executar(gerador);
     }
 }
