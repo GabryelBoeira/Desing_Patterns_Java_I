@@ -1,24 +1,22 @@
 package br.com.alura.loja.pedido;
 
 import br.com.alura.loja.orcamento.Orcamento;
-import br.com.alura.loja.pedido.acao.EnviarEmailPedido;
-import br.com.alura.loja.pedido.acao.PedidoRepository;
+import br.com.alura.loja.pedido.acao.AcaoAposGerarPedido;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class GeraPedidoHandler {
 
-    //Contrutor da classe que realizar a injeção de dependencia: repository, service, etc;
-    //public GeraPedidoHandler() {}
+    private List<AcaoAposGerarPedido> acaoList;
 
-    public void executar(GeraPedido dados) {
-        Pedido pedido = new Pedido(dados.getCliente(), LocalDateTime.now(), new Orcamento(dados.getValorOrcamento(), dados.getQtdeItens()));
-
-        EnviarEmailPedido emailPedido = new EnviarEmailPedido();
-        emailPedido.executar(pedido);
-
-        PedidoRepository pedidoRepository = new PedidoRepository();
-        pedidoRepository.executar(pedido);
+    public GeraPedidoHandler(List<AcaoAposGerarPedido> acaoList) {
+        this.acaoList = acaoList;
     }
 
+    public void executar(GeraPedido dados) {
+
+        Pedido pedido = new Pedido(dados.getCliente(), LocalDateTime.now(), new Orcamento(dados.getValorOrcamento(), dados.getQtdeItens()));
+        acaoList.forEach(acao -> acao.executarAcao(pedido));
+    }
 }
