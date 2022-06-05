@@ -10,6 +10,6 @@
 * Crie diferentes ações com Observer
 * Use o Builder para a criação de objetos complicados
 
-[Certificado de conclusão do curso](https://cursos.alura.com.br/certificate/gabryelboeira/introducao-design-patterns-java)
+[Certificado de conclusão do curso](https://cursos.alura.com.br/certificate/baf65f61-d17d-455d-9ed8-c638ae0f00f9)
 
 **_ Curso Concluido _**
